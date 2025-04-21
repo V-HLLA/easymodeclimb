@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 EasymodeClimb
 
-## Getting Started
+_EasymodeClimb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta._
 
-First, run the development server:
+> “What champ should I play to climb — without needing insane mechanics?”
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Layer    | Tech                                | Why?                                     |
+| -------- | ----------------------------------- | ---------------------------------------- |
+| Frontend | Next.js 14 + App Router             | Modern, SEO-friendly, flexible           |
+| UI       | Tailwind CSS + shadcn/ui            | Fast styling and solid component library |
+| Backend  | Next.js Route Handlers              | Built-in API handling                    |
+| Database | PostgreSQL + Prisma                 | Relational, powerful querying            |
+| Scraper  | Python (requests/BS4 or Playwright) | Great for headless scraping              |
+| Charts   | Recharts or TanStack Charts         | For win rate history and stats           |
+| Hosting  | Vercel + Railway                    | Simple and scalable deployment           |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✅ MVP Features Checklist
 
-To learn more about Next.js, take a look at the following resources:
+### 🧭 Core Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] `/` - Home Page (intro + top champs preview)
+- [ ] `/recomended-champions` - Champion Explorer with sorting/filtering
+- [ ] `/leaderboard` - Easy Champs Leaderboard
+- [ ] `/404` - Custom Not Found Page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🏆 Easy Champs Leaderboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Build “Easy Score” algorithm
+- [ ] Sort champions based on score
+- [ ] Add tags:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  - [ ] Beginner Friendly
+  - [ ] Safe Pick
+  - [ ] Low Ban Rate
+
+  ### 🗃️ Database (PostgreSQL + Prisma)
+
+- [ ] Define schema:
+  - [ ] Champion
+  - [ ] ChampionStats (by patch)
+- [ ] Seed with initial data from scraper
+- [ ] Write queries for API consumption
+
+---
+
+### 📡 API Routes (Next.js Route Handlers)
+
+- [ ] `/api/champions` – All champions w/ filters
+- [ ] `/api/champions/[slug]` – Stats for one champ
+- [ ] `/api/leaderboard` – Ranked “easy” champs
+
+---
+
+### 🎨 UI/UX
+
+- [ ] Use Tailwind + shadcn/ui components
+- [ ] Mobile-responsive layout
+- [ ] Loading skeletons
+- [ ] Light/dark mode (optional)
+
+---
