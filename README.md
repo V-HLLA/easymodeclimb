@@ -61,9 +61,9 @@ _EasymodeClimb is a League of Legends companion tool that recommends champions t
 
 ### 🎨 UI/UX
 
-- [ ] Use Tailwind + shadcn/ui components
+- [x] Use Tailwind + shadcn/ui components
 - [ ] Mobile-responsive layout
 - [ ] Loading skeletons
-- [ ] Light/dark mode (optional)
+- [x] Light/dark mode
 
 ---
