@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ModeToggle } from "./ThemeToggle";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
@@ -12,18 +13,18 @@ export default function Header() {
           EasymodeClimb
         </Link>
         <nav className="flex ml-auto justify-center items-center gap-2">
-          <Link
-            href="/recomended-champions"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          <Button
+            asChild
+            className="border text-white shadow-xs dark:bg-input/30 border-input hover:bg-input/50 transition"
           >
-            Recommended Champions
-          </Link>
-          <Link
-            href="/leaderboard"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            <Link href="/recomended-champions">Recommended Champions</Link>
+          </Button>
+          <Button
+            asChild
+            className="border text-white shadow-xs dark:bg-input/30 border-input hover:bg-input/50 transition"
           >
-            Leaderboard
-          </Link>
+            <Link href="/leaderboard">Leaderboard</Link>
+          </Button>
           <ModeToggle />
         </nav>
       </div>

@@ -18,21 +18,17 @@ export default function HomePage() {
         and climb.
       </p>
 
-      <div className="mt-8 flex flex-col sm:flex-row gap-4">
-        <Link
-          href="/recomended-champions"
-          className="text-gray-700 dark:text-gray-300 hover:text-gray-300 dark:hover:text-blue-400 transition
-          underline font-bold back"
+      <div className="mt-8 flex sm:flex-row gap-4">
+        <Button className="hover:text-white hover:bg-blue-600 transition">
+          <Link href="/recomended-champions">Explore Champions</Link>
+        </Button>
+
+        <Button
+          asChild
+          className="hover:text-white hover:bg-blue-600 transition"
         >
-          <Button className="hover:text-white hover:bg-blue-600 transition">
-            Explore Champions
-          </Button>
-        </Link>
-        <Link href="/leaderboard">
-          <Button className="hover:text-white hover:bg-blue-600 transition">
-            View Easy Champs Leaderboard
-          </Button>
-        </Link>
+          <Link href="/leaderboard">View Easy Champs Leaderboard</Link>
+        </Button>
       </div>
     </main>
   );
