@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 py-12 text-center">
+    <main className="flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
       <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl">
         🧠 EasymodeClimb
       </h1>
