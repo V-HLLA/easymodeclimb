@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ModeToggle } from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -15,7 +16,7 @@ export default function Header() {
             href="/recomended-champions"
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
-            Champions
+            Recommended Champions
           </Link>
           <Link
             href="/leaderboard"
@@ -23,6 +24,7 @@ export default function Header() {
           >
             Leaderboard
           </Link>
+          <ModeToggle />
         </nav>
       </div>
     </header>

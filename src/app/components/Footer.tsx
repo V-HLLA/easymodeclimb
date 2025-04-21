@@ -10,11 +10,11 @@ export default function Footer() {
           <p className="mt-2 sm:mt-0">Built for casual climbers.</p>
         </div>
         <div className="text-xs text-center sm:text-left leading-relaxed">
-          <strong>Disclaimer:</strong> EasymodeClimb is a fan-made project and
-          is not affiliated with Riot Games or League of Legends. Champion data
-          is collected from publicly available third-party sources and may not
-          reflect the most up-to-date game changes. All trademarks and
-          copyrights belong to their respective owners.
+          <strong>Disclaimer:</strong> EasymodeClimb is non-commercial Learning
+          project and is not affiliated with Riot Games or League of Legends.
+          Champion data is collected from publicly available third-party sources
+          and may not reflect the most up-to-date game changes. All trademarks
+          and copyrights belong to their respective owners.
         </div>
       </div>
     </footer>

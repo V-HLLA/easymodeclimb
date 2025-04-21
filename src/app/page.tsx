@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
@@ -18,8 +19,20 @@ export default function HomePage() {
       </p>
 
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
-        <Link href="/recomended-champions">Explore Champions</Link>
-        <Link href="/leaderboard">View Easy Champs Leaderboard</Link>
+        <Link
+          href="/recomended-champions"
+          className="text-gray-700 dark:text-gray-300 hover:text-gray-300 dark:hover:text-blue-400 transition
+          underline font-bold back"
+        >
+          <Button className="hover:text-white hover:bg-blue-600 transition">
+            Explore Champions
+          </Button>
+        </Link>
+        <Link href="/leaderboard">
+          <Button className="hover:text-white hover:bg-blue-600 transition">
+            View Easy Champs Leaderboard
+          </Button>
+        </Link>
       </div>
     </main>
   );
