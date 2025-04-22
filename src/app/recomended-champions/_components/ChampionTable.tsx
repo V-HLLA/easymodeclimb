@@ -34,7 +34,9 @@ export default function ChampionTable() {
   useEffect(() => {
     const fetchChamps = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/champions");
+        const res = await fetch(
+          "https://easymode-climb.vercel.app/api/champions"
+        );
         const data = await res.json();
         setChampions(data);
       } catch (err) {
