@@ -1,3 +1,5 @@
+"use client";
+import Loading from "@/app/Loading";
 import {
   Table,
   TableBody,
@@ -7,29 +9,45 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useId } from "react";
+import { useEffect, useState } from "react";
+
+type Champion = {
+  id: number;
+  patch: string;
+  championname: string;
+  championwinrate: string;
+};
 
 export default function ChampionTable() {
+  const [champions, setChampions] = useState<Champion[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const tableHeadData = [
-    "Tier",
+    // "Tier",
     "Name",
     "Win rate",
-    "Pick rate",
-    "Ban rate",
-    "Lane",
+    // "Pick rate",
+    // "Ban rate",
+    // "Lane",
   ];
 
-  const championData = [
-    {
-      championTier: "S",
-      championName: "Miss fortune",
-      championWinRate: 52.09,
-      championPickRate: 2,
-      championBanRate: 6,
-      championPreferedLane: "Bottom",
-      id: useId(),
-    },
-  ];
+  useEffect(() => {
+    const fetchChamps = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/champions");
+        const data = await res.json();
+        setChampions(data);
+      } catch (err) {
+        console.error("Failed to fetch champions", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchChamps();
+  }, []);
+
+  if (isLoading) return <Loading />;
 
   return (
     <Table className="max-w-3xl justify-self-center bg-purple-200 dark:bg-neutral-700 m-2">
@@ -44,20 +62,20 @@ export default function ChampionTable() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {championData.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell>{item.championTier}</TableCell>
-            <TableCell>{item.championName}</TableCell>
+        {champions.map((champion) => (
+          <TableRow key={champion.id}>
+            {/* <TableCell>{item.championTier}</TableCell> */}
+            <TableCell>{champion.championname}</TableCell>
             <TableCell
-              className={`${item.championWinRate >= 52 && "text-green-300"} ${
-                item.championWinRate <= 50 && "text-red-300"
-              }`}
+              className={`${
+                Number(champion.championwinrate) >= 52 && "text-green-300"
+              } ${Number(champion.championwinrate) <= 50 && "text-red-300"}`}
             >
-              {item.championWinRate}%
+              {champion.championwinrate}%
             </TableCell>
-            <TableCell>{item.championPickRate}%</TableCell>
+            {/* <TableCell>{item.championPickRate}%</TableCell>
             <TableCell>{item.championBanRate}%</TableCell>
-            <TableCell>{item.championPreferedLane}</TableCell>
+            <TableCell>{item.championPreferedLane}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>
