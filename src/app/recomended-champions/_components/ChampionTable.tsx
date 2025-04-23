@@ -23,7 +23,9 @@ const baseUrl =
     : "https://easymode-climb.vercel.app";
 
 export default async function ChampionTable() {
-  const response = await fetch(`${baseUrl}/api/champions`);
+  const response = await fetch(`${baseUrl}/api/champions`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error("Failed to fetch champions stats");
   }
