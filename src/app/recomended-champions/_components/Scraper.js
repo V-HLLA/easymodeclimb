@@ -56,29 +56,64 @@ const getWinrateData = () => {
 getCurrentPatchNumber();
 getWinrateData();
 
-const statDivs = document.querySelectorAll('q\\:key="5",');
+const topChampionElements = document.querySelectorAll('a[q\\:key="SO_0"]');
+const topChampionNames = Array.from(topChampionElements).map((championName) =>
+  championName.innerText.trim()
+);
 
-statDivs.forEach((div) => {
-  console.log(div.textContent); // logs the text (e.g. "2.91", "3.05")
-});
+// Gets the lower half champion names
+const lowerChampionElements = document.querySelectorAll(
+  'div.flex.h-\\[52px\\].justify-between.text-\\[13px\\].text-\\[\\#ccc\\].odd\\:bg-\\[\\#181818\\].even\\:bg-\\[\\#101010\\] div[style="width: 110px;"] a'
+);
+const lowerChampionNames = Array.from(lowerChampionElements).map((name) =>
+  name.innerText.trim()
+);
 
-// top
-const keyDivs = [
+// Combine both arrays into one
+const allChampionNames = [...topChampionNames, ...lowerChampionNames];
+
+// top status complete
+const topWinPickBanStats = [
   ...document.querySelectorAll(
     'div[q\\:key="5"], div[q\\:key="6"], div[q\\:key="7"]'
   ),
 ]
-  .slice(2)
-  .filter((div) => div.textContent.trim().length <= 5);
+  .slice(3)
+  .map((div) => {
+    let trimmedText = div.textContent.trim();
+    // If the length is greater than 5, trim it to 5 characters
+    if (trimmedText.length > 5) {
+      trimmedText = trimmedText.substring(0, 5);
+    }
+    div.textContent = trimmedText; // Update the div content
+    return div.textContent;
+  });
 
-keyDivs.forEach((div) => {
-  console.log(div.textContent.trim());
+// this gets the lowerhalf status complete
+const lowerWinPickBanStats = [
+  ...document.querySelectorAll(
+    'div.my-auto.justify-center.flex[style="width: 48px;"]'
+  ),
+].map((div) => {
+  let trimmedText = div.textContent.trim();
+  if (trimmedText.length > 5) {
+    trimmedText = trimmedText.substring(0, 5);
+  }
+  div.textContent = trimmedText;
+  return div.textContent;
 });
 
-// this gets the lowerhalf
-const rateDivs = document.querySelectorAll(
-  'div.my-auto.justify-center.flex[style="width: 48px;"]'
-);
-rateDivs.forEach((div) => {
-  console.log(div.textContent); // Logs: 2.91, 3.05, etc.
+// joins both stats list
+const championsStats = [...topWinPickBanStats, ...lowerWinPickBanStats];
+
+const championData = allChampionNames.map((name, index) => {
+  const start = index * 3;
+  return {
+    name,
+    winRate: championsStats[start],
+    pickRate: championsStats[start + 1],
+    banRate: championsStats[start + 2],
+  };
 });
+
+console.log(championData);

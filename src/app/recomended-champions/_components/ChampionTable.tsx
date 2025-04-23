@@ -13,6 +13,8 @@ type Champion = {
   patch: string;
   championname: string;
   championwinrate: string;
+  championpickrate: string;
+  championbanrate: string;
 };
 
 const baseUrl =
@@ -34,14 +36,14 @@ export default async function ChampionTable() {
     // "Tier",
     "Name",
     "Win rate",
-    // "Pick rate",
-    // "Ban rate",
+    "Pick rate",
+    "Ban rate",
     // "Lane",
   ];
 
   return (
     <Table className="max-w-3xl justify-self-center bg-purple-200 dark:bg-neutral-700 m-2">
-      <TableCaption>Champion Tier List</TableCaption>
+      <TableCaption>Champion Tier List Patch:{}</TableCaption>
       <TableHeader className="bg-neutral-800">
         <TableRow>
           {tableHeadData.map((label) => (
@@ -63,9 +65,9 @@ export default async function ChampionTable() {
             >
               {champion.championwinrate}%
             </TableCell>
-            {/* <TableCell>{item.championPickRate}%</TableCell>
-            <TableCell>{item.championBanRate}%</TableCell>
-            <TableCell>{item.championPreferedLane}</TableCell> */}
+            <TableCell>{champion.championpickrate}%</TableCell>
+            <TableCell>{champion.championbanrate}%</TableCell>
+            {/* <TableCell>{item.championPreferedLane}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>

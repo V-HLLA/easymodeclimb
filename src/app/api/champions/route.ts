@@ -6,7 +6,7 @@ const sql = neon(process.env.DATABASE_URL!);
 export async function GET() {
   try {
     const rows = await sql`
-      SELECT id, patch, name as championName, winrate as championWinRate
+      SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate
       FROM champion_stats
       ORDER BY winrate DESC;
     `;

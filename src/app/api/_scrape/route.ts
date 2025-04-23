@@ -53,26 +53,40 @@ export async function GET() {
     const allChampionNames = [...topNames, ...lowerNames];
 
     // Scrape winrates
-    const rawRates = await page.$$eval(
-      "div.text-center span",
-      (spans) =>
-        spans
-          .map((el) => {
-            const text = el.textContent?.trim() || "";
-            const num = parseFloat(text);
-            return isNaN(num) ? null : parseFloat(num.toFixed(2));
-          })
-          .filter((v) => v !== null)
-          .filter((_, index) => index % 2 === 0) // Keep only winrates (even index)
+    // Top stats (win, pick, ban rates)
+    const topStatsRaw = await page.$$eval(
+      'div[q\\:key="5"], div[q\\:key="6"], div[q\\:key="7"]',
+      (elements) => {
+        return elements.slice(3).map((el) => {
+          const text = el.textContent?.trim() || "";
+          return text.length > 5 ? text.slice(0, 5) : text;
+        });
+      }
     );
 
-    const formattedWinrates = rawRates.map((rate) => rate!.toFixed(2));
+    // Lower stats (win, pick, ban rates)
+    const lowerStats = await page.$$eval(
+      'div.my-auto.justify-center.flex[style="width: 48px;"]',
+      (elements) => {
+        return elements.map((el) => {
+          const text = el.textContent?.trim() || "";
+          return text.length > 5 ? text.slice(0, 5) : text;
+        });
+      }
+    );
+
+    const championsStats = [...topStatsRaw, ...lowerStats];
 
     // Build champion data
-    const championData = allChampionNames.map((name, index) => ({
-      championName: name,
-      championWinRate: formattedWinrates[index],
-    }));
+    const championData = allChampionNames.map((name, index) => {
+      const start = index * 3;
+      return {
+        name,
+        winRate: championsStats[start],
+        pickRate: championsStats[start + 1],
+        banRate: championsStats[start + 2],
+      };
+    });
 
     // Close browser after scraping
     await browser.close();
@@ -81,11 +95,16 @@ export async function GET() {
     const sql = neon(process.env.DATABASE_URL!);
 
     // Save to DB (upsert instead of truncate)
-    for (let i = 0; i < allChampionNames.length; i++) {
+    for (const champ of championData) {
       await sql`
-        INSERT INTO champion_stats (patch, name, winrate)
-        VALUES (${currentPatch}, ${allChampionNames[i]}, ${formattedWinrates[i]})
-      `;
+    INSERT INTO champion_stats (patch, name, winrate, pickrate, banrate)
+    VALUES (${currentPatch}, ${champ.name}, ${champ.winRate}, ${champ.pickRate}, ${champ.banRate})
+    ON CONFLICT (patch, name)
+    DO UPDATE SET
+      winrate = EXCLUDED.winrate,
+      pickrate = EXCLUDED.pickrate,
+      banrate = EXCLUDED.banrate
+  `;
     }
 
     return NextResponse.json({
