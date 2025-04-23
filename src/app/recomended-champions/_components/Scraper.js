@@ -55,3 +55,30 @@ const getWinrateData = () => {
 
 getCurrentPatchNumber();
 getWinrateData();
+
+const statDivs = document.querySelectorAll('q\\:key="5",');
+
+statDivs.forEach((div) => {
+  console.log(div.textContent); // logs the text (e.g. "2.91", "3.05")
+});
+
+// top
+const keyDivs = [
+  ...document.querySelectorAll(
+    'div[q\\:key="5"], div[q\\:key="6"], div[q\\:key="7"]'
+  ),
+]
+  .slice(2)
+  .filter((div) => div.textContent.trim().length <= 5);
+
+keyDivs.forEach((div) => {
+  console.log(div.textContent.trim());
+});
+
+// this gets the lowerhalf
+const rateDivs = document.querySelectorAll(
+  'div.my-auto.justify-center.flex[style="width: 48px;"]'
+);
+rateDivs.forEach((div) => {
+  console.log(div.textContent); // Logs: 2.91, 3.05, etc.
+});

@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import ChampionTable from "./_components/ChampionTable";
+import Loading from "../Loading";
 
 export default function RecomendedChampions() {
   return (
@@ -6,7 +8,9 @@ export default function RecomendedChampions() {
       <h1 className="text-4xl sm:text-3xl font-extrabold tracking-tight max-w-3xl">
         Easy champions in the Meta right now:
       </h1>
-      <ChampionTable />
+      <Suspense fallback={<Loading />}>
+        <ChampionTable />
+      </Suspense>
     </main>
   );
 }

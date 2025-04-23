@@ -11,12 +11,22 @@ export async function GET() {
       ORDER BY winrate DESC;
     `;
 
-    return NextResponse.json(rows);
+    const response = NextResponse.json(rows);
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "http://localhost:3000"
+    );
+    return response;
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    return NextResponse.json(
+    const errorResponse = NextResponse.json(
       { message: "Failed to fetch champion data", error: errorMessage },
       { status: 500 }
     );
+    errorResponse.headers.set(
+      "Access-Control-Allow-Origin",
+      "http://localhost:3000"
+    );
+    return errorResponse;
   }
 }
