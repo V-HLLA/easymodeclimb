@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { tableHeadData } from "@/lib/constants";
 
 type Champion = {
   id: number;
@@ -23,25 +24,18 @@ const baseUrl =
     : "https://easymode-climb.vercel.app";
 
 export default async function ChampionTable() {
-  const response = await fetch(`${baseUrl}/api/champions`, {
+  const response = await fetch(`${baseUrl}/api/easychampions`, {
     cache: "no-store",
   });
+  // needs to change to ISR once website dev is over
+  // const response = await fetch(`${baseUrl}/api/champions`, {
+  //   next: { revalidate: 1296000 },
+  // });
   if (!response.ok) {
-    throw new Error("Failed to fetch champions stats");
+    return <div>Failed to fetch easy champions stats</div>;
   }
 
   const championStats = (await response.json()) as Champion[];
-  if (response.ok) {
-    console.log(championStats);
-  }
-  const tableHeadData = [
-    // "Tier",
-    "Name",
-    "Win rate",
-    "Pick rate",
-    "Ban rate",
-    // "Lane",
-  ];
 
   return (
     <Table className="max-w-3xl justify-self-center bg-purple-200 dark:bg-neutral-700 m-2">
@@ -63,7 +57,9 @@ export default async function ChampionTable() {
             <TableCell
               className={`${
                 Number(champion.championwinrate) >= 52 && "text-green-300"
-              } ${Number(champion.championwinrate) <= 50 && "text-red-300"}`}
+              } ${Number(champion.championwinrate) >= 53 && "text-green-600"} ${
+                Number(champion.championwinrate) <= 51 && "text-red-300"
+              }`}
             >
               {champion.championwinrate}%
             </TableCell>
