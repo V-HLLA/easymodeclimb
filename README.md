@@ -43,10 +43,10 @@ _EasymodeClimb is a League of Legends companion tool that recommends champions t
 
   ### 🗃️ Database (PostgreSQL + Prisma)
 
-- [ ] Define schema:
-  - [ ] Champion
-  - [ ] ChampionStats (by patch)
-- [ ] Seed with initial data from scraper
+- [x] Define schema:
+  - [x] Champion
+  - [x] ChampionStats (by patch)
+- [x] Seed with initial data from scraper
 - [ ] Write queries for API consumption
 
 ---
@@ -55,7 +55,7 @@ _EasymodeClimb is a League of Legends companion tool that recommends champions t
 
 - [ ] `/api/champions` – All champions w/ filters
 - [ ] `/api/champions/[slug]` – Stats for one champ
-- [ ] `/api/leaderboard` – Ranked “easy” champs
+- [x] `/api/leaderboard` – Ranked “easy” champs
 
 ---
 

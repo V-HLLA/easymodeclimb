@@ -1,3 +1,5 @@
 export default function Leaderboard() {
-  return <div>Leaderboard</div>;
+  return (
+    <div className="flex justify-center items-center flex-1">Leaderboard</div>
+  );
 }

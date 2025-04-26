@@ -18,7 +18,7 @@ export default function HomePage() {
         and climb.
       </p>
 
-      <div className="mt-8 flex sm:flex-row gap-4">
+      <div className="mt-8 flex flex-col sm:flex-row gap-4">
         <Button className="hover:text-white hover:bg-blue-600 transition">
           <Link href="/recomended-champions">Explore Champions</Link>
         </Button>

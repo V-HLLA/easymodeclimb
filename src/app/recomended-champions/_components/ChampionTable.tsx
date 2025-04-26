@@ -55,7 +55,9 @@ export default async function ChampionTable() {
         {championStats.map((champion) => (
           <TableRow key={champion.id}>
             {/* <TableCell>{item.championTier}</TableCell> */}
-            <TableCell>{champion.championname}</TableCell>
+            <TableCell className="whitespace-pre-wrap">
+              {champion.championname}
+            </TableCell>
             <TableCell
               className={`${
                 Number(champion.championwinrate) >= 52 && "text-green-300"
