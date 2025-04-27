@@ -1,16 +1,30 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
-import { EASY_CHAMPS_LIST } from "@/lib/constants";
 
 const sql = neon(process.env.DATABASE_URL!);
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const rows = await sql`
-  SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate FROM champion_stats
-  WHERE name = ANY(${EASY_CHAMPS_LIST.names})
+    const url = new URL(request.url);
+    const role = url.searchParams.get("role");
+    let rows: Record<string, number>[] = [];
+    if (role) {
+      // const filteredByRole = `'${role}'`;
+      const formattedRole =
+        role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
+      rows = await sql`
+    SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, roles as championRoles 
+    FROM easychampions_stats
+    WHERE ${formattedRole} = ANY(roles)
+    ORDER BY winrate DESC;
+  `;
+    } else {
+      rows = await sql`
+  SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, roles
+  FROM easychampions_stats
   ORDER BY winrate DESC;
-`;
+  `;
+    }
 
     const response = NextResponse.json(rows);
     response.headers.set(

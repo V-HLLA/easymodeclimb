@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { tableHeadData } from "@/lib/constants";
+import { BASEURL, tableHeadData } from "@/lib/constants";
 
 type Champion = {
   id: number;
@@ -18,13 +18,8 @@ type Champion = {
   championbanrate: string;
 };
 
-const baseUrl =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "https://easymode-climb.vercel.app";
-
 export default async function ChampionTable() {
-  const response = await fetch(`${baseUrl}/api/easychampions`, {
+  const response = await fetch(`${BASEURL}/api/easychampions`, {
     cache: "no-store",
   });
   // needs to change to ISR once website dev is over
