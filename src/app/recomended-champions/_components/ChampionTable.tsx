@@ -37,7 +37,7 @@ export default async function ChampionTable() {
       <TableCaption>
         Champion Tier List Patch: {championStats[0]?.patch}
       </TableCaption>
-      <TableHeader className="bg-zinc-500 dark:bg-zinc-900">
+      <TableHeader className="bg-zinc-500 dark:bg-black">
         <TableRow>
           {tableHeadData.map((label) => (
             <TableHead className="text-center text-white" key={label}>
