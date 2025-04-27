@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
-      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl">
+      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl dark:text-white">
         🧠 EasymodeClimb
       </h1>
-      <p className="mt-4 text-lg sm:text-xl max-w-2xl text-muted-foreground">
+      <p className="mt-4 text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
         Tired of sweating for LP?{" "}
         <strong>Find the easiest League of Legends champions</strong> to climb
         ranked — no mechanics required.
@@ -19,15 +19,15 @@ export default function HomePage() {
       </p>
 
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
-        <Button className="hover:text-white hover:bg-blue-600 transition">
+        {/* <Button className="hover:text-white hover:bg-blue-600 transition">
           <Link href="/recomended-champions">Explore Champions</Link>
-        </Button>
+        </Button> */}
 
         <Button
           asChild
-          className="hover:text-white hover:bg-blue-600 transition"
+          className="bg-blue-700 text-white hover:bg-blue-500 transition ease-in-out"
         >
-          <Link href="/leaderboard">View Easy Champs Leaderboard</Link>
+          <Link href="/recomended-champions">View Easy Champs Leaderboard</Link>
         </Button>
       </div>
     </main>

@@ -16,7 +16,10 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        className="hover:cursor-pointer hover:bg-blue-600 hover:text-white border-0 dark:border"
+      >
         <Button variant="outline" size="icon">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -26,19 +29,19 @@ export function ModeToggle() {
       <DropdownMenuContent align="end" className="min-w-0">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className="text-right justify-center-safe"
+          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 focus:bg-blue-600 hover:text-white focus:text-white"
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className="text-right justify-center-safe"
+          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 hover:text-white"
         >
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className="text-right justify-center-safe"
+          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 hover:text-white"
         >
           System
         </DropdownMenuItem>

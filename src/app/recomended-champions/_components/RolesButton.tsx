@@ -1,5 +1,5 @@
-// "use client";
-// import { BASEURL } from "@/lib/constants";
+"use client";
+import { ROLES } from "@/lib/constants";
 
 // // Corrected handleClick function
 // const handleClick = () => {
@@ -14,33 +14,35 @@
 //     });
 // };
 
-// import { useState } from "react";
-// import { Button } from "@/components/ui/button";
-// import Image from "next/image";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
-// export function RolesButton() {
-//   const [selected, setSelected] = useState<string>("");
+export function RolesButton() {
+  const [selected, setSelected] = useState<string | null>();
 
-//   const handleClick = (value: string) => {
-//     setSelected(value);
-//   };
+  const handleClick = (role: string) => {
+    if (role === selected) {
+      setSelected(null);
+    } else {
+      setSelected(role);
+    }
+  };
 
-//   const roles = ["top", "mid", "jungle", ""];
-
-//   return (
-//     <div className="flex space-x-4">
-//       <Button
-//         onClick={() => handleClick({ roleName })}
-//         variant={selected === roleName ? "default" : "secondary"}
-//       >
-//         <Image
-//           src={`images/${roleeName}.svg`}
-//           alt={`${roleName} route icon`}
-//           width={15}
-//           height={15}
-//           unoptimized
-//         />
-//       </Button>
-//     </div>
-//   );
-// }
+  return (
+    <div className="flex space-x-4">
+      {ROLES.map(({ roleName, svgIcon }) => (
+        <Button
+          onClick={() => handleClick(`${roleName}`)}
+          key={roleName}
+          className={
+            selected === roleName
+              ? "dark:bg-purple-900 dark:text-white bg-purple-900 hover:cursor-pointer"
+              : "dark:bg-black dark:hover:bg-purple-900 text-white hover:bg-purple-900 hover:cursor-pointer"
+          }
+        >
+          {svgIcon}
+        </Button>
+      ))}
+    </div>
+  );
+}

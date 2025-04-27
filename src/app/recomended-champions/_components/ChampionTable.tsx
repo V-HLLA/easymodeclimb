@@ -33,31 +33,39 @@ export default async function ChampionTable() {
   const championStats = (await response.json()) as Champion[];
 
   return (
-    <Table className="max-w-3xl justify-self-center bg-purple-200 dark:bg-neutral-700 m-2">
+    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800">
       <TableCaption>
         Champion Tier List Patch: {championStats[0]?.patch}
       </TableCaption>
-      <TableHeader className="bg-neutral-800">
+      <TableHeader className="bg-zinc-500 dark:bg-zinc-900">
         <TableRow>
           {tableHeadData.map((label) => (
-            <TableHead className="text-center" key={label}>
+            <TableHead className="text-center text-white" key={label}>
               {label}
             </TableHead>
           ))}
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="text-gray-900 dark:text-white">
         {championStats.map((champion) => (
-          <TableRow key={champion.id}>
+          <TableRow
+            key={champion.id}
+            className="hover:bg-zinc-300 dark:hover:bg-zinc-700"
+          >
             {/* <TableCell>{item.championTier}</TableCell> */}
             <TableCell className="whitespace-pre-wrap">
               {champion.championname}
             </TableCell>
             <TableCell
               className={`${
-                Number(champion.championwinrate) >= 52 && "text-green-300"
-              } ${Number(champion.championwinrate) >= 53 && "text-green-600"} ${
-                Number(champion.championwinrate) <= 51 && "text-red-300"
+                Number(champion.championwinrate) >= 52 &&
+                "text-green-500 dark:text-green-300"
+              } ${
+                Number(champion.championwinrate) >= 53 &&
+                "text-green-700 dark:text-green-600"
+              } ${
+                Number(champion.championwinrate) <= 51 &&
+                "text-red-400 dark:text-red-300"
               }`}
             >
               {champion.championwinrate}%
