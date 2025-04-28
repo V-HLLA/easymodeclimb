@@ -1,7 +1,8 @@
-import { Suspense } from "react";
-import ChampionTable from "./_components/ChampionTable";
-import Loading from "../Loading";
-import FilterByRole from "./_components/FilterByRole";
+"use client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ChampionTableFiltered from "./_components/ChampionTableFiltered";
+
+const queryClient = new QueryClient();
 
 export default function RecomendedChampions() {
   return (
@@ -9,10 +10,10 @@ export default function RecomendedChampions() {
       <h1 className="text-4xl sm:text-3xl font-extrabold tracking-tight max-w-3xl dark:text-white">
         Easy champions in the Meta right now:
       </h1>
-      <FilterByRole />
-      <Suspense fallback={<Loading />}>
-        <ChampionTable />
-      </Suspense>
+      <h6 className="dark:text-white">Filter By Role:</h6>
+      <QueryClientProvider client={queryClient}>
+        <ChampionTableFiltered />
+      </QueryClientProvider>
     </main>
   );
 }

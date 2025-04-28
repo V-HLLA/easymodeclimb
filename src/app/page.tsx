@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Logo from "./components/Logo";
 
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
-      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl dark:text-white">
-        🧠 EasymodeClimb
+      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl dark:text-white flex items-center drop-shadow-sm  dark:drop-shadow-purple-900">
+        <Logo /> EasymodeClimb
       </h1>
       <p className="mt-4 text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
         Tired of sweating for LP?{" "}
@@ -27,7 +28,7 @@ export default function HomePage() {
           asChild
           className="bg-blue-700 text-white hover:bg-blue-500 transition ease-in-out"
         >
-          <Link href="/recomended-champions">View Easy Champs Leaderboard</Link>
+          <Link href="/recomended-champions">Easy Champions Leaderboard</Link>
         </Button>
       </div>
     </main>

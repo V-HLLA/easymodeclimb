@@ -17,7 +17,7 @@ import { ROLES } from "@/lib/constants";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-export function RolesButton() {
+export function RolesButton({ selectedRole, setSelectedRole }) {
   const [selected, setSelected] = useState<string | null>();
 
   const handleClick = (role: string) => {

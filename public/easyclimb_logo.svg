@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="320px" height="320px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 320 320"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+   <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="110.63" y1="196.08" x2="246.4" y2="196.08">
+    <stop offset="0" stop-opacity="1" stop-color="#FFA004"/>
+    <stop offset="1" stop-opacity="1" stop-color="#FF128A"/>
+   </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path fill="black" stroke="black" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2.61313" d="M160 10c-8,7.81 -16.01,15.64 -24.01,23.46l0 6.95 12 14.44 0 37.03 24.01 0 0 -37.03 12 -14.44c0,-2.32 0,-4.63 0,-6.95 -8,-7.82 -16,-15.65 -24,-23.46l0 0 0 0zm-6.48 27.92l6.48 -6.83 6.48 6.83 -6.48 6.85 -6.48 -6.85z"/>
+  <path fill="black" stroke="black" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2.61313" d="M160 292.01c55.96,-20.54 87.81,-57.43 94.75,-109.41 1.61,-31.2 1.71,-62.39 0,-93.59 -23.07,-6.58 -44.67,-9.82 -71.07,-10.61l0 -16.12c30.73,0.93 59.76,4.83 86.6,12.49 1.99,36.31 1.88,72.61 0,108.93 -8.06,60.5 -45.15,102.39 -110.28,126.3 -65.14,-23.91 -102.22,-65.8 -110.28,-126.3 -1.88,-36.32 -2,-72.62 0,-108.93 26.84,-7.66 55.86,-11.56 86.59,-12.49l0 16.12c-26.4,0.79 -48,4.03 -71.06,10.61 -1.71,31.2 -1.62,62.39 0,93.59 6.93,51.98 38.78,88.87 94.75,109.41l0 0 0 0z"/>
+  <path fill="black" stroke="black" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2.61313" d="M113.6 128.31c-3.65,-3.83 -6.44,-10.03 -7.82,-20.05 31.16,-12.33 77.28,-12.33 108.43,0 -1.37,10.02 -4.16,16.22 -7.82,20.05 -26.94,-11.83 -65.84,-11.83 -92.79,0l0 0z"/>
+  <path fill="#00D9F8" stroke="#00D9F8" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2.61313" d="M156.98 127.49c-6,0.34 -11.94,1.05 -17.81,2.22 0,27.34 0,54.67 0,82.01 5.93,0 11.88,0 17.81,0 0,-28.08 0,-56.15 0,-84.23l0 0z"/>
+  <path fill="#00D9F8" stroke="#00D9F8" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2.61313" d="M163.67 127.49l17.81 2.07c0,15.32 0,30.63 0,45.95 -14.98,-0.5 -14.79,14.8 -14.49,30.21l-3.32 0 0 -78.23 0 0z"/>
+  <path fill="url(#id0)" d="M204.18 164.93c7.2,-12.18 14.39,-24.37 21.58,-36.56 7.2,12.19 14.38,24.38 21.58,36.56 -4.24,0 -8.48,0 -12.72,0 0,12.87 0,25.74 0,38.6 -13.37,0 -26.74,0 -40.11,0 0,10.26 0,20.53 0,30.78 -13.44,0 -26.89,0 -40.35,0 0,10.36 0,20.72 0,31.07 -7.61,0 -15.23,0 -22.84,0 -8.8,-4.87 -15.48,-11.75 -20.49,-20.17 8.92,0 17.84,0 26.76,0 0,-9.17 0,-18.34 0,-27.51 13.22,0 26.45,0 39.67,0 0,-10.28 0,-20.56 0,-30.84 13.22,0 26.43,0 39.65,0 0,-7.31 0,-14.62 0,-21.93 -4.24,0 -8.49,0 -12.73,0l0 0z"/>
+ </g>
+</svg>
