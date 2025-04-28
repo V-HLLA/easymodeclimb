@@ -1,24 +1,23 @@
 "use client";
 import { ROLES } from "@/lib/constants";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Role } from "@/lib/types";
 
-interface RolesButtonProps {
-  setSelectedRoleAction: React.Dispatch<
-    React.SetStateAction<string | undefined>
-  >;
-}
+type RolesButtonProps = {
+  setSelectedRoleAction: React.Dispatch<SetStateAction<Role | string>>;
+};
 
 export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
   const [selected, setSelected] = useState<string | null>();
 
-  const handleClick = (role: string) => {
-    if (role === selected) {
+  const handleClick = (roleName: string) => {
+    if (roleName === selected) {
       setSelected(null);
-      setSelectedRoleAction(undefined);
+      setSelectedRoleAction("All");
     } else {
-      setSelectedRoleAction(role);
-      setSelected(role);
+      setSelectedRoleAction(roleName);
+      setSelected(roleName);
     }
   };
 
@@ -26,7 +25,7 @@ export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
     <div className="flex space-x-4">
       {ROLES.map(({ roleName, svgIcon }) => (
         <Button
-          onClick={() => handleClick(`${roleName}`)}
+          onClick={() => handleClick(roleName)}
           key={roleName}
           className={
             selected === roleName

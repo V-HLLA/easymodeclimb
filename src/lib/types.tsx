@@ -5,7 +5,16 @@ export type Champion = {
   championwinrate: string;
   championpickrate: string;
   championbanrate: string;
-  roles: string[];
+  role: string;
 };
 
 export type ChampionsStats = Champion[];
+
+export type Role =
+  | "Top"
+  | "Mid"
+  | "Jungle"
+  | "Bot"
+  | "Support"
+  | "All"
+  | string;
