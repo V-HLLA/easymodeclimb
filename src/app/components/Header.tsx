@@ -21,12 +21,12 @@ export default function Header() {
           >
             <Link href="/recomended-champions">Recommended Champions</Link>
           </Button>
-          <Button
+          {/* <Button
             asChild
             className="bg-white text-black dark:text-white hover:bg-blue-600 hover:text-white dark:border shadow-xs dark:bg-input/30 border-input dark:hover:bg-input/50 transition ease-in-out"
           >
             <Link href="/leaderboard">Leaderboard</Link>
-          </Button>
+          </Button> */}
           <ModeToggle />
         </nav>
       </div>

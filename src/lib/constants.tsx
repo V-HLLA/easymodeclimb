@@ -9,7 +9,7 @@ export const tableHeadData = [
   "Win rate",
   "Pick rate",
   "Ban rate",
-  // "Lane",
+  "Lane",
 ];
 
 export const EASY_CHAMPS_LIST = [

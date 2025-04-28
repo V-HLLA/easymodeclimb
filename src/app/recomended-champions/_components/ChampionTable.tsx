@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { tableHeadData } from "@/lib/constants";
+import { ROLES, tableHeadData } from "@/lib/constants";
 import { ChampionsStats } from "@/lib/types";
 
 type ChampionTableProps = {
@@ -16,12 +16,15 @@ type ChampionTableProps = {
 
 export default function ChampionTable({ data }: ChampionTableProps) {
   return (
-    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800">
+    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs w-fit">
       <TableCaption>Champion Tier List Patch: {data[0]?.patch}</TableCaption>
       <TableHeader className="bg-zinc-500 dark:bg-black">
         <TableRow>
           {tableHeadData.map((label) => (
-            <TableHead className="text-center text-white" key={label}>
+            <TableHead
+              className="text-center text-white max-sm:px-1"
+              key={label}
+            >
               {label}
             </TableHead>
           ))}
@@ -34,7 +37,7 @@ export default function ChampionTable({ data }: ChampionTableProps) {
             className="hover:bg-zinc-300 dark:hover:bg-zinc-700"
           >
             {/* <TableCell>{item.championTier}</TableCell> */}
-            <TableCell className="whitespace-pre-wrap">
+            <TableCell className="whitespace-pre-wrap max-sm:px-1">
               {championStats.championname}
             </TableCell>
             <TableCell
@@ -47,13 +50,18 @@ export default function ChampionTable({ data }: ChampionTableProps) {
               } ${
                 Number(championStats.championwinrate) <= 51 &&
                 "text-red-400 dark:text-red-300"
-              }`}
+              } max-sm:px-1`}
             >
               {championStats.championwinrate}%
             </TableCell>
             <TableCell>{championStats.championpickrate}%</TableCell>
             <TableCell>{championStats.championbanrate}%</TableCell>
-            {/* <TableCell>{championStats.roles}</TableCell> */}
+            <TableCell className="flex justify-center items-center">
+              {
+                ROLES.find((role) => role.roleName === championStats.role)
+                  ?.svgIcon
+              }
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
