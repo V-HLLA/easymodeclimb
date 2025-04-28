@@ -13,7 +13,7 @@ export async function GET(request: Request) {
       const formattedRole =
         role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
       rows = await sql`
-    SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, roles as championRoles 
+    SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, roles
     FROM easychampions_stats
     WHERE ${formattedRole} = ANY(roles)
     ORDER BY winrate DESC;

@@ -1,29 +1,23 @@
 "use client";
 import { ROLES } from "@/lib/constants";
-
-// // Corrected handleClick function
-// const handleClick = () => {
-//   // Send the role as a query parameter in the URL
-//   fetch(`${BASEURL}/api/easychampions?role=mid`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data); // Handle the response data
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching data:", error);
-//     });
-// };
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-export function RolesButton({ selectedRole, setSelectedRole }) {
+interface RolesButtonProps {
+  setSelectedRoleAction: React.Dispatch<
+    React.SetStateAction<string | undefined>
+  >;
+}
+
+export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
   const [selected, setSelected] = useState<string | null>();
 
   const handleClick = (role: string) => {
     if (role === selected) {
       setSelected(null);
+      setSelectedRoleAction(undefined);
     } else {
+      setSelectedRoleAction(role);
       setSelected(role);
     }
   };
@@ -46,3 +40,16 @@ export function RolesButton({ selectedRole, setSelectedRole }) {
     </div>
   );
 }
+
+// // Corrected handleClick function
+// const handleClick = () => {
+//   // Send the role as a query parameter in the URL
+//   fetch(`${BASEURL}/api/easychampions?role=mid`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data); // Handle the response data
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching data:", error);
+//     });
+// };

@@ -74,7 +74,7 @@ export const EASY_CHAMPS_LIST = [
 
 export const ROLES = [
   {
-    roleName: "top",
+    roleName: "Top",
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ export const ROLES = [
   },
 
   {
-    roleName: "jungle",
+    roleName: "Jungle",
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ export const ROLES = [
     ),
   },
   {
-    roleName: "mid",
+    roleName: "Mid",
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ export const ROLES = [
     ),
   },
   {
-    roleName: "bot",
+    roleName: "Bot",
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ export const ROLES = [
     ),
   },
   {
-    roleName: "support",
+    roleName: "Support",
     svgIcon: (
       // support icon
       <svg
