@@ -16,13 +16,13 @@ type ChampionTableProps = {
 
 export default function ChampionTable({ data }: ChampionTableProps) {
   return (
-    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs max-sm:max-w-fit">
+    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs">
       <TableCaption>Champion Tier List Patch: {data[0]?.patch}</TableCaption>
       <TableHeader className="bg-zinc-500 dark:bg-black">
         <TableRow>
           {tableHeadData.map((label) => (
             <TableHead
-              className="text-center text-white max-sm:px-1"
+              className="text-center text-white max-sm:px-0 w-16"
               key={label}
             >
               {label}
@@ -37,7 +37,7 @@ export default function ChampionTable({ data }: ChampionTableProps) {
             className="hover:bg-zinc-300 dark:hover:bg-zinc-700"
           >
             {/* <TableCell>{item.championTier}</TableCell> */}
-            <TableCell className="whitespace-pre-wrap max-sm:px-1">
+            <TableCell className="whitespace-pre-wrap max-sm:px-0 max-sm:w-16">
               {championStats.championname}
             </TableCell>
             <TableCell
@@ -56,7 +56,7 @@ export default function ChampionTable({ data }: ChampionTableProps) {
             </TableCell>
             <TableCell>{championStats.championpickrate}%</TableCell>
             <TableCell>{championStats.championbanrate}%</TableCell>
-            <TableCell>
+            <TableCell className="grid justify-center">
               {
                 ROLES.find((role) => role.roleName === championStats.role)
                   ?.svgIcon
