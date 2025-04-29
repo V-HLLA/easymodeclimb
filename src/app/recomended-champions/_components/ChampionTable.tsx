@@ -37,7 +37,7 @@ export default function ChampionTable({ data }: ChampionTableProps) {
             className="hover:bg-zinc-300 dark:hover:bg-zinc-700"
           >
             {/* <TableCell>{item.championTier}</TableCell> */}
-            <TableCell className="whitespace-pre-wrap max-sm:px-0 max-sm:w-16">
+            <TableCell className="whitespace-pre-wrap max-sm:px-0.5 max-[30rem]:w-36">
               {championStats.championname}
             </TableCell>
             <TableCell

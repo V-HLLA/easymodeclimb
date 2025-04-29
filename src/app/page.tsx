@@ -29,7 +29,7 @@ export default function HomePage() {
           asChild
           className="text-white transition-transform-[background-postion] duration-500 ease-in-out
     hover:scale-105
-    bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800
+    bg-gradient-to-r from-purple-800 via-purple-500 to-purple-800
     bg-[length:200%_200%] bg-[position:0_0]
     hover:bg-[position:100%_0]
     "
