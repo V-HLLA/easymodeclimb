@@ -5,6 +5,7 @@ import ChampionTable from "./ChampionTable";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllChampions } from "@/app/recomended-champions/_components/FetchAllChampions";
 import { Role } from "@/lib/types";
+import Loading from "@/app/Loading";
 
 export default function ChampionTableFiltered() {
   const [selectedRole, setSelectedRole] = useState<Role>("All");
@@ -14,7 +15,7 @@ export default function ChampionTableFiltered() {
     queryFn: fetchAllChampions,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   if (error) return <div>Error loading champions</div>;
 
   const filterData = () => {
@@ -25,8 +26,6 @@ export default function ChampionTableFiltered() {
       return data?.filter(({ role }) => role.includes(selectedRole));
     }
   };
-
-  // const filteredData = selectedRole === "All" ? return data:
 
   const filteredData = filterData();
 

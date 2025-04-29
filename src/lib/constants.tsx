@@ -78,17 +78,39 @@ export const ROLES = [
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 7871.71 7977.56"
-        fill="currentColor"
-        width="15"
-        height="15"
+        xmlSpace="preserve"
+        width="15px"
+        height="15px"
+        version="1.1"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
+        imageRendering="optimizeQuality"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        viewBox="0 0 15 15.2"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g id="Layer_x0020_1">
-          <g id="_2914206434640">
-            <polygon points="-0,0 -0,7758.64 1380.61,6273.59 1378.98,1424.44 6319.07,1424.44 7713.2,0 " />
-            <rect x="3119.27" y="3222.39" width="1751.68" height="1751.68" />
-            <polygon points="7871.71,7977.56 7871.71,885.77 6576.8,2243.18 6578.33,6675.55 1944.9,6675.55 637.31,7977.56 " />
-            <polygon points="-0,0 -0,7758.64 1380.61,6273.59 1378.98,1424.44 6319.07,1424.44 7713.2,0 " />
+          <metadata id="CorelCorpID_0Corel-Layer" />
+          <g id="_2271745442864">
+            <polygon
+              fill="currentColor"
+              points="0,0 0,14.78 2.63,11.95 2.63,2.71 12.04,2.71 14.69,0 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="5.94,6.14 9.28,6.14 9.28,9.48 5.94,9.48 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="15,15.2 15,1.69 12.53,4.27 12.53,12.72 3.71,12.72 1.21,15.2 "
+            />
+            <polygon
+              fill="currentColor"
+              points="0,0 0,14.78 2.63,11.95 2.63,2.71 12.04,2.71 14.69,0 "
+            />
           </g>
         </g>
       </svg>
@@ -120,16 +142,35 @@ export const ROLES = [
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 7871.71 7847.24"
-        fill="currentColor"
-        width="15"
-        height="15"
+        xmlSpace="preserve"
+        width="15px"
+        height="15px"
+        version="1.1"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
+        imageRendering="optimizeQuality"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        viewBox="0 0 15 14.95"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g id="Layer_x0020_1">
-          <g id="_2950364995600">
-            <polygon points="-0,7847.24 -0,6410.74 6411.77,0 7871.71,0 7871.71,1523.5 1497.77,7847.24 " />
-            <polygon points="7865.38,7847.24 7865.38,2796.03 6664.16,3915.07 6664.16,6652.22 3936.46,6652.22 2722.33,7847.24 " />
-            <polygon points="-0,0 -0,5051.21 1201.21,3932.17 1201.21,1195.02 3928.92,1195.02 5143.05,0 " />
+          <metadata id="CorelCorpID_0Corel-Layer" />
+          <g id="_2271476979712">
+            <polygon
+              fill="currentColor"
+              points="0,14.95 0,12.21 12.21,0 15,0 15,2.9 2.85,14.95 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="14.98,14.95 14.98,5.33 12.7,7.46 12.7,12.67 7.5,12.67 5.19,14.95 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="0,0 0,9.62 2.29,7.49 2.29,2.28 7.48,2.28 9.8,0 "
+            />
           </g>
         </g>
       </svg>
@@ -140,18 +181,39 @@ export const ROLES = [
     svgIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 7871.71 7977.57"
-        fill="currentColor"
-        width="15"
-        height="15"
+        xmlSpace="preserve"
+        width="15px"
+        height="15px"
+        version="1.1"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
+        imageRendering="optimizeQuality"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        viewBox="0 0 15 15.2"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g id="Layer_x0020_1">
           <metadata id="CorelCorpID_0Corel-Layer" />
-          <g id="_2914208719376">
-            <polygon points="7871.71,7977.57 7871.71,218.92 6491.1,1703.97 6492.73,6553.12 1552.64,6553.12 158.51,7977.57 " />
-            <rect x="3000.76" y="3003.5" width="1751.68" height="1751.68" />
-            <polygon points="-0,0 -0,7091.8 1294.91,5734.39 1293.38,1302.02 5926.81,1302.02 7234.4,0 " />
-            <polygon points="7871.71,7977.57 7871.71,218.92 6491.1,1703.97 6492.73,6553.12 1552.64,6553.12 158.51,7977.57 " />
+          <g id="_2271746213664">
+            <polygon
+              fill="currentColor"
+              points="15,15.2 15,0.42 12.37,3.25 12.37,12.48 2.96,12.48 0.3,15.2 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="9.05,9.06 5.72,9.06 5.72,5.72 9.05,5.72 "
+            />
+            <polygon
+              fill="currentColor"
+              fillOpacity="0.50"
+              points="0,0 0,13.51 2.47,10.92 2.46,2.48 11.29,2.48 13.78,0 "
+            />
+            <polygon
+              fill="currentColor"
+              points="15,15.2 15,0.42 12.37,3.25 12.37,12.48 2.96,12.48 0.3,15.2 "
+            />
           </g>
         </g>
       </svg>
