@@ -16,7 +16,7 @@ type ChampionTableProps = {
 
 export default function ChampionTable({ data }: ChampionTableProps) {
   return (
-    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs w-fit">
+    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs max-sm:max-w-fit">
       <TableCaption>Champion Tier List Patch: {data[0]?.patch}</TableCaption>
       <TableHeader className="bg-zinc-500 dark:bg-black">
         <TableRow>
@@ -56,7 +56,7 @@ export default function ChampionTable({ data }: ChampionTableProps) {
             </TableCell>
             <TableCell>{championStats.championpickrate}%</TableCell>
             <TableCell>{championStats.championbanrate}%</TableCell>
-            <TableCell className="flex justify-center items-center">
+            <TableCell>
               {
                 ROLES.find((role) => role.roleName === championStats.role)
                   ?.svgIcon

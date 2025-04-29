@@ -18,7 +18,7 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger
         asChild
-        className="hover:cursor-pointer hover:bg-blue-600 hover:text-white border-0 dark:border"
+        className="hover:cursor-pointer hover:bg-purple-600 hover:text-white border-0 dark:border"
       >
         <Button variant="outline" size="icon">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -26,22 +26,22 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-0">
+      <DropdownMenuContent align="center" className="min-w-0">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 focus:bg-blue-600 hover:text-white focus:text-white"
+          className="text-right justify-center-safe hover:cursor-pointer focus:bg-purple-600 focus:text-white"
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 hover:text-white"
+          className="text-right justify-center-safe hover:cursor-pointer focus:bg-purple-600 focus:text-white"
         >
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className="text-right justify-center-safe hover:cursor-pointer hover:bg-blue-600 hover:text-white"
+          className="text-right justify-center-safe hover:cursor-pointer focus:bg-purple-600 focus:text-white"
         >
           System
         </DropdownMenuItem>
