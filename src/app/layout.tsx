@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -16,9 +16,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EasymodeClimb",
+  title: "Easymode Climb",
   description:
-    "EasymodeClimb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta.",
+    "Easymode Climb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta.",
+  keywords: ["Easy champions", "League of legends", "Meta"],
+
+  openGraph: {
+    title: "Easymode Climb",
+    description: "Easymode Climb find meta easy champions",
+    url: "https://https://easymode-climb.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Easymode Climb website",
+      },
+    ],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#59168b" },
+    { media: "(prefers-color-scheme: light)", color: "#59168b" },
+  ],
 };
 
 export default function RootLayout({

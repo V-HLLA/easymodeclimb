@@ -5,11 +5,11 @@ import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-purple-700    bg-gradient-to-r from-purple-900 via-purple-600 to-purple-900">
+    <header className="w-full border-b border-purple-700 bg-gradient-to-t from-purple-800 via-purple-800 to-purple-900">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center sm:justify-between gap-2 max-sm:flex-wrap justify-center">
         <Link
           href="/"
-          className="text-3xl font-bold text-white flex items-center hover:drop-shadow-lg"
+          className="text-3xl font-bold text-white flex flex-wrap justify-center items-center hover:drop-shadow-lg"
           title="Easymode Climb"
         >
           EasymodeClimb

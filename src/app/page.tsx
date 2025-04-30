@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center flex-1 px-4 py-12 text-center gap-3">
-      <h1 className="text-6xl max-sm:text-4xl font-extrabold tracking-tight max-w-3xl dark:text-white flex items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(89,22,139,0.6)] ">
+      <h1 className="text-6xl max-sm:text-4xl font-extrabold tracking-tight max-w-3xl dark:text-white flex wrap-anywhere items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(89,22,139,0.6)] ">
         EasymodeClimb
       </h1>
       <p className="text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
