@@ -16,8 +16,11 @@ type ChampionTableProps = {
 
 export default function ChampionTable({ data }: ChampionTableProps) {
   return (
-    <Table className="max-w-3xl justify-self-center m-2 bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs">
-      <TableCaption>Champion Tier List Patch: {data[0]?.patch}</TableCaption>
+    <Table className="max-w-3xl justify-self-center bg-zinc-100 dark:bg-zinc-800 max-sm:text-xs">
+      <TableCaption>
+        Champion Tier List Patch:{" "}
+        <span className="text-violet-600">{data[0]?.patch}</span>
+      </TableCaption>
       <TableHeader className="bg-zinc-500 dark:bg-black">
         <TableRow>
           {tableHeadData.map((label) => (

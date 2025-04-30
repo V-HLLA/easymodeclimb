@@ -5,11 +5,12 @@ import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-purple-700 bg-purple-900 ">
+    <header className="w-full border-b border-purple-700    bg-gradient-to-r from-purple-900 via-purple-600 to-purple-900">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center sm:justify-between gap-2 max-sm:flex-wrap justify-center">
         <Link
           href="/"
-          className="text-3xl font-bold text-white flex items-center hover:drop-shadow-sm dark:hover:drop-shadow-purple-700"
+          className="text-3xl font-bold text-white flex items-center hover:drop-shadow-lg"
+          title="Easymode Climb"
         >
           EasymodeClimb
           <Logo />
@@ -19,7 +20,12 @@ export default function Header() {
             asChild
             className="bg-white text-black dark:text-white hover:bg-purple-600 hover:text-white dark:border shadow-xs dark:bg-input/30 border-input dark:hover:bg-input/50 transition ease-in-out"
           >
-            <Link href="/recomended-champions">Recommended Champions</Link>
+            <Link
+              href="/recomended-champions"
+              title="Easy Champions Leaderboard"
+            >
+              Easy Champions Leaderboard
+            </Link>
           </Button>
           {/* <Button
             asChild
