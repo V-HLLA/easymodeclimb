@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "Easymode Climb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta.",
   keywords: ["Easy champions", "League of legends", "Meta"],
 
+  metadataBase: new URL("https://https://easymode-climb.vercel.app/"),
   openGraph: {
     title: "Easymode Climb",
     description: "Easymode Climb find meta easy champions",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/preview.jpg",
+        url: "/preview.png",
         width: 1200,
         height: 630,
         alt: "Easymode Climb website",
