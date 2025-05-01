@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchAllChampions } from "@/app/recomended-champions/_components/FetchAllChampions";
 import { Role } from "@/lib/types";
 import Loading from "@/app/Loading";
+import { columns } from "./columns";
 
 export default function ChampionTableFiltered() {
   const [selectedRole, setSelectedRole] = useState<Role>("All");
@@ -32,7 +33,7 @@ export default function ChampionTableFiltered() {
   return (
     <>
       <RolesButton setSelectedRoleAction={setSelectedRole} />
-      {filteredData && <ChampionTable data={filteredData} />}
+      {filteredData && <ChampionTable columns={columns} data={filteredData} />}
     </>
   );
 }
