@@ -1,3 +1,5 @@
+import { ColumnDef } from "@tanstack/react-table";
+
 export type Champion = {
   id: number;
   patch: string;
@@ -8,8 +10,6 @@ export type Champion = {
   role: string;
 };
 
-export type ChampionsStats = Champion[];
-
 export type Role =
   | "Top"
   | "Mid"
@@ -18,3 +18,8 @@ export type Role =
   | "Support"
   | "All"
   | string;
+
+export type ChampionTableProps = {
+  columns: ColumnDef<Champion>[];
+  data: Champion[];
+};

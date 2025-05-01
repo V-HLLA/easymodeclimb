@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/preview.png",
+        url: "/preview.jpg",
         width: 1200,
-        height: 630,
+        height: 675,
         alt: "Easymode Climb website",
       },
     ],

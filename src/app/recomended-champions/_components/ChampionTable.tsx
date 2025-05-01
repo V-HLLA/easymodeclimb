@@ -8,8 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ROLES } from "@/lib/constants";
+import { ChampionTableProps } from "@/lib/types";
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
@@ -17,21 +17,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useState } from "react";
-
-type Champion = {
-  id: number;
-  patch: string;
-  championname: string;
-  championwinrate: string;
-  championpickrate: string;
-  championbanrate: string;
-  role: string;
-};
-
-type ChampionTableProps = {
-  columns: ColumnDef<Champion>[];
-  data: Champion[];
-};
 
 export default function ChampionTable({ data, columns }: ChampionTableProps) {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -87,16 +72,18 @@ export default function ChampionTable({ data, columns }: ChampionTableProps) {
                   {championStats.championname}
                 </TableCell>
                 <TableCell
-                  className={`${
-                    Number(championStats.championwinrate) >= 52 &&
-                    "text-green-500 dark:text-green-300"
-                  } ${
-                    Number(championStats.championwinrate) >= 53 &&
-                    "text-green-700 dark:text-green-600"
-                  } ${
-                    Number(championStats.championwinrate) <= 51 &&
-                    "text-red-400 dark:text-red-300"
-                  } max-sm:p-0 max-[31rem]:w-16`}
+                  className={`
+  ${
+    Number(championStats.championwinrate) >= 53
+      ? "text-green-700 dark:text-green-600"
+      : Number(championStats.championwinrate) >= 52.5
+      ? "text-green-500 dark:text-green-300"
+      : Number(championStats.championwinrate) <= 51
+      ? "text-red-400 dark:text-red-300"
+      : ""
+  }
+  max-sm:p-0 max-[31rem]:w-16
+`}
                 >
                   {championStats.championwinrate}%
                 </TableCell>

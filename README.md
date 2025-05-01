@@ -7,7 +7,7 @@ _EasymodeClimb is a League of Legends companion tool that recommends champions t
 ## Implementation
 
 You can view the live version of the website by clicking the image below:
-[![Site Preview](./public/preview.png)](https://easymode-climb.vercel.app/)
+[![Site Preview](./public/preview.jpg)](https://easymode-climb.vercel.app/)
 
 ---
 
