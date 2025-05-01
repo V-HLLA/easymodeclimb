@@ -58,7 +58,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Easymode" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-zinc-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-zinc-900 flex flex-col min-h-screen`}
       >
         <ThemeProvider
           attribute="class"
