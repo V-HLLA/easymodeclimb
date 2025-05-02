@@ -9,11 +9,11 @@ type RolesButtonProps = {
 };
 
 export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
-  const [selected, setSelected] = useState<string | null>();
+  const [selected, setSelected] = useState<string | undefined>();
 
   const handleClick = (roleName: string) => {
     if (roleName === selected) {
-      setSelected(null);
+      setSelected(undefined);
       setSelectedRoleAction("All");
     } else {
       setSelectedRoleAction(roleName);

@@ -1,7 +1,14 @@
 {
   "name": "Easymode Climb",
   "short_name": "Easymode",
+  "description": "Easymode Climb find meta easy champions",
+  "start_url": "/",
   "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
     {
       "src": "/favicons/web-app-manifest-192x192.png",
       "sizes": "192x192",
@@ -15,7 +22,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#222222",
+  "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone"
 }

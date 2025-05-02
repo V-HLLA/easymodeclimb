@@ -17,14 +17,13 @@ export function HomeCarousel() {
       <CarouselContent className="items-center">
         <CarouselItem className="">
           <section className="flex flex-col items-center justify-center text-center gap-3">
-            <h1 className="text-6xl max-md:text-4xl max-[35rem]:text-2xl font-extrabold tracking-tight max-w-3xl dark:text-white flex wrap-anywhere items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(89,22,139,0.6)] ">
+            <h1 className="text-6xl max-md:text-4xl max-[35rem]:text-3xl font-extrabold tracking-tight max-w-3xl dark:text-white flex items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(110,17,176,0.8)] ">
               EasymodeClimb
             </h1>
             <p className="text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
               Tired of always looking for a champion to pick for easy LP?
               <br />
               <strong>Find the easiest League of Legends champions</strong>
-              <br />
               to climb ranked — no mechanics required.
             </p>
 
@@ -57,7 +56,7 @@ export function HomeCarousel() {
             <header>
               <h2
                 className="text-2xl max-[35rem]:text-md font-extrabold tracking-tight 
-              drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(89,22,139,0.6)]
+              drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(110,17,176,0.8)]
               text-zinc-900 dark:text-white"
               >
                 Why play easy champions?
@@ -75,8 +74,7 @@ export function HomeCarousel() {
               <p>
                 They&apos;re{" "}
                 <b>perfect for climbing the ranked ladder consistently</b>,
-                especially if you want to reduce tilt, learn fundamentals, or
-                play comfortably with limited time or focus.
+                especially if you want to reduce tilt and focus on fundamentals.
               </p>
               <p>
                 They allow you to <b>take breaks</b> from the game{" "}
@@ -90,8 +88,8 @@ export function HomeCarousel() {
           </section>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="max-[25rem]:-left-8" />
+      <CarouselNext className="max-[25rem]:-right-8" />
     </Carousel>
   );
 }

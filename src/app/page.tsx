@@ -1,4 +1,4 @@
-import { HomeCarousel } from "./recomended-champions/_components/HomeCarousel";
+import { HomeCarousel } from "./components/HomeCarousel";
 
 export default function HomePage() {
   return (
