@@ -20,8 +20,30 @@ export const metadata: Metadata = {
   description:
     "Easymode Climb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta.",
   keywords: ["Easy champions", "League of legends", "Meta"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/icon0.svg", sizes: "any", type: "image/svg+xml" },
+      { url: "/icon1.png", sizes: "any", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+    other: [
+      {
+        rel: "icon",
+        sizes: "192x192",
+        url: "/web-app-manifest-192x192.png",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        sizes: "512x512",
+        url: "/web-app-manifest-512x512.png",
+        type: "image/png",
+      },
+    ],
+  },
 
-  metadataBase: new URL("https://https://easymode-climb.vercel.app/"),
+  metadataBase: new URL("https://easymode-climb.vercel.app/"),
   openGraph: {
     title: "Easymode Climb",
     description: "Easymode Climb find meta easy champions",
@@ -32,6 +54,7 @@ export const metadata: Metadata = {
         url: "/preview.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Easymode Climb website",
       },
     ],
@@ -53,9 +76,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-US" suppressHydrationWarning>
       <head>
-        <meta name="apple-mobile-web-app-title" content="Easymode" />
+        <meta name="apple-mobile-web-app-title" content="Easymode Climb" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-zinc-900 flex flex-col min-h-screen`}
