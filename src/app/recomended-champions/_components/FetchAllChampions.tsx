@@ -1,3 +1,4 @@
+"use server";
 import { BASEURL } from "@/lib/constants";
 import { Champion } from "@/lib/types";
 
