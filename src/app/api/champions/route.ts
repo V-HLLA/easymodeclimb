@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 
 const sql = neon(process.env.DATABASE_URL!);
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   const authHeader = req.headers.get("authorization");
   const token = authHeader?.split(" ")[1];
 
@@ -19,6 +19,7 @@ export async function GET(req: Request) {
     `;
 
     const response = NextResponse.json(rows);
+    response.headers.set("Cache-Control", "no-store");
     response.headers.set(
       "Access-Control-Allow-Origin",
       "http://localhost:3000"
