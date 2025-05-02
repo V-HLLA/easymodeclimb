@@ -11,13 +11,13 @@ import Link from "next/link";
 export function HomeCarousel() {
   return (
     <Carousel
-      className="mx-auto w-full max-w-xl max-md:max-w-md max-[35rem]:max-w-[70vw] p-1 py-12"
+      className="mx-auto w-full max-w-4xl max-md:max-w-md max-[35rem]:max-w-[70vw] p-1 py-12"
       opts={{ align: "center", loop: true }}
     >
       <CarouselContent className="items-center">
         <CarouselItem className="">
           <section className="flex flex-col items-center justify-center text-center gap-3">
-            <h1 className="text-6xl max-md:text-4xl max-[35rem]:text-3xl font-extrabold tracking-tight max-w-3xl dark:text-white flex items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(110,17,176,0.8)] ">
+            <h1 className="text-7xl max-md:text-4xl max-[35rem]:text-3xl font-extrabold tracking-tight max-w-3xl dark:text-white flex items-center drop-shadow-md dark:drop-shadow-[0_0_10px_rgba(110,17,176,0.8)] ">
               EasymodeClimb
             </h1>
             <p className="text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
