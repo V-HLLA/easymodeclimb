@@ -19,7 +19,10 @@ export async function GET(req: NextRequest) {
     `;
 
     const response = NextResponse.json(rows);
-    response.headers.set("Cache-Control", "no-store");
+    response.headers.set(
+      "Cache-Control",
+      "no-cache, no-store, must-revalidate"
+    );
     response.headers.set(
       "Access-Control-Allow-Origin",
       "http://localhost:3000"
