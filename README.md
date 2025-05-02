@@ -29,8 +29,8 @@ You can view the live version of the website by clicking the image below:
 
 ### 🧭 Core Pages
 
-- [ ] `/` - Home Page (intro + top champs preview)
-- [ ] `/easy-recomended-champions` - Champion Explorer with sorting/filtering
+- [x] `/` - Home Page (intro + why pick easy champions)
+- [x] `/easy-recomended-champions` - Champion Explorer with sorting/filtering
 - [x] `/404` - Custom Not Found Page
 
 ---

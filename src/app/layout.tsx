@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Easymode Climb",
     description: "Easymode Climb find meta easy champions",
-    url: "https://https://easymode-climb.vercel.app/",
+    url: "https://easymode-climb.vercel.app/",
     type: "website",
     images: [
       {
