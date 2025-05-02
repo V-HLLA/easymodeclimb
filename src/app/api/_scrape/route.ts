@@ -1,8 +1,15 @@
 import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
-import { chromium } from "playwright"; // only available in the server environment
+import { chromium } from "playwright";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const authHeader = req.headers.get("authorization");
+  const token = authHeader?.split(" ")[1];
+
+  if (token !== process.env.SCRAPE_SECRET) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
   let browser;
   try {
     // Launch the browser

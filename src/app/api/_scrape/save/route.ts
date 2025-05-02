@@ -4,7 +4,14 @@ import { EASY_CHAMPS_LIST } from "@/lib/constants";
 
 const sql = neon(process.env.DATABASE_URL!);
 
-export async function GET() {
+export async function GET(req: Request) {
+  const authHeader = req.headers.get("authorization");
+  const token = authHeader?.split(" ")[1];
+
+  if (token !== process.env.SCRAPE_SECRET) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
   try {
     const rows = await sql`
       INSERT INTO easychampions_stats (id, patch, name, winrate, pickrate, banrate)

@@ -3,7 +3,14 @@ import { neon } from "@neondatabase/serverless";
 
 const sql = neon(process.env.DATABASE_URL!);
 
-export async function GET() {
+export async function GET(req: Request) {
+  const authHeader = req.headers.get("authorization");
+  const token = authHeader?.split(" ")[1];
+
+  if (token !== process.env.SCRAPE_SECRET) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
   try {
     const rows = await sql`
       SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate
