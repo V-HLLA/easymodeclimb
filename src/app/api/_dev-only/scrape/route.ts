@@ -1,3 +1,4 @@
+// Scrapes data and upserts to champion_stats
 import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
 import { chromium } from "playwright";
@@ -106,7 +107,7 @@ export async function GET(req: Request) {
     // Connect to Neon DB
     const sql = neon(process.env.DATABASE_URL!);
 
-    // Save to DB (upsert instead of truncate)
+    // Save to DB (upsert)
     for (const champ of championData) {
       await sql`
     INSERT INTO champion_stats (patch, name, winrate, pickrate, banrate)

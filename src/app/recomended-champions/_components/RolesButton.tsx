@@ -27,10 +27,11 @@ export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
         <Button
           onClick={() => handleClick(roleName)}
           key={roleName}
+          title={`Route: ${roleName}`}
           className={
             selected === roleName
-              ? "dark:bg-purple-900 dark:text-white bg-purple-900 hover:cursor-pointer"
-              : "dark:bg-black dark:hover:bg-purple-900 text-white hover:bg-purple-900 hover:cursor-pointer"
+              ? "dark:bg-purple-900 dark:text-white bg-purple-900 cursor-pointer"
+              : "dark:bg-black dark:hover:bg-purple-900 text-white hover:bg-purple-900 cursor-pointer"
           }
         >
           {svgIcon}
@@ -39,16 +40,3 @@ export function RolesButton({ setSelectedRoleAction }: RolesButtonProps) {
     </div>
   );
 }
-
-// // Corrected handleClick function
-// const handleClick = () => {
-//   // Send the role as a query parameter in the URL
-//   fetch(`${BASEURL}/api/easychampions?role=mid`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data); // Handle the response data
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching data:", error);
-//     });
-// };

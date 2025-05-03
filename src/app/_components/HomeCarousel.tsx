@@ -23,8 +23,8 @@ export function HomeCarousel() {
             <p className="text-lg sm:text-xl max-w-2xl text-zinc-800 dark:text-white">
               Tired of always looking for a champion to pick for easy LP?
               <br />
-              <strong>Find the easiest League of Legends champions</strong>
-              to climb ranked — no mechanics required.
+              <strong>Find the easiest League of Legends champions</strong> to
+              climb ranked — no mechanics required.
             </p>
 
             <p className="text-md text-muted-foreground">
@@ -88,8 +88,8 @@ export function HomeCarousel() {
           </section>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious className="max-[25rem]:-left-8" />
-      <CarouselNext className="max-[25rem]:-right-8" />
+      <CarouselPrevious className="max-[25rem]:-left-8 cursor-pointer" />
+      <CarouselNext className="max-[25rem]:-right-8 cursor-pointer" />
     </Carousel>
   );
 }

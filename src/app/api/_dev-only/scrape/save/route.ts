@@ -1,3 +1,4 @@
+//takes the scraped data from champion_stats and upserts easychampions_stats with it
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { BASEURL, EASY_CHAMPS_LIST } from "@/lib/constants";

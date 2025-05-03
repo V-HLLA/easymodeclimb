@@ -1,3 +1,4 @@
+// Gets all champions data from champion_stats table
 import { NextRequest, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 

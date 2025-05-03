@@ -2,30 +2,26 @@
 import { useState } from "react";
 import { RolesButton } from "./RolesButton";
 import ChampionTable from "./ChampionTable";
-import { useQuery } from "@tanstack/react-query";
-import { fetchAllChampions } from "@/app/recomended-champions/_components/FetchAllChampions";
-import { Role } from "@/lib/types";
-import Loading from "@/app/Loading";
+import { Champion, Role } from "@/lib/types";
 import { columns } from "./columns";
 
-export default function ChampionTableFiltered() {
+export default function ChampionTableFiltered({
+  initialData,
+}: {
+  initialData: Champion[] | null;
+}) {
   const [selectedRole, setSelectedRole] = useState<Role>("All");
 
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["champions-stats-data"],
-    queryFn: fetchAllChampions,
-    staleTime: 1000 * 60 * 5, // 5 minutes
-  });
-
-  if (isLoading) return <Loading />;
-  if (error) return <div>Error loading champions</div>;
+  if (initialData === null) {
+    return <p>Failed to load champion statistics. Please try again later.</p>;
+  }
 
   const filterData = () => {
     if (selectedRole === "All") {
-      return data;
+      return initialData;
     } else {
       // Dynamically filter by the selected role
-      return data?.filter(({ role }) => role.includes(selectedRole));
+      return initialData?.filter(({ role }) => role === selectedRole);
     }
   };
 

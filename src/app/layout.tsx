@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { ThemeProvider } from "./components/theme-provider";
+import "./styles/globals.css";
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
+import { ThemeProvider } from "./_components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,22 +22,22 @@ export const metadata: Metadata = {
   keywords: ["Easy champions", "League of legends", "Meta"],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
-      { url: "/icon0.svg", sizes: "any", type: "image/svg+xml" },
-      { url: "/icon1.png", sizes: "any", type: "image/png" },
+      { url: "/favicons/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/favicons/icon0.svg", sizes: "any", type: "image/svg+xml" },
+      { url: "/favicons/icon1.png", sizes: "any", type: "image/png" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/favicons/apple-icon.png",
     other: [
       {
         rel: "icon",
         sizes: "192x192",
-        url: "/web-app-manifest-192x192.png",
+        url: "/favicons/web-app-manifest-192x192.png",
         type: "image/png",
       },
       {
         rel: "icon",
         sizes: "512x512",
-        url: "/web-app-manifest-512x512.png",
+        url: "/favicons/web-app-manifest-512x512.png",
         type: "image/png",
       },
     ],

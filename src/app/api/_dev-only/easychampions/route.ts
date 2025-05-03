@@ -1,12 +1,16 @@
-"use server";
+// Filters champions data from champion_stats table based on easy champion list
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { BASEURL } from "@/lib/constants";
 
 const sql = neon(process.env.DATABASE_URL!);
-// export const revalidate = 60 * 60 * 24 * 7; // 7 days in seconds
 
 export async function GET() {
+  // Only run this code in "development"
+  if (process.env.NODE_ENV !== "development") {
+    return new NextResponse("Not in dev", { status: 404 });
+  }
+
   try {
     const rows = await sql`
   SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, role
