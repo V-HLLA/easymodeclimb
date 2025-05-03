@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  applicationName: "Easymode Climb",
   title: "Easymode Climb",
   description:
     "Easymode Climb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta.",
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     title: "Easymode Climb",
     description: "Easymode Climb find meta easy champions",
     url: "https://easymode-climb.vercel.app/",
+    siteName: "Easymode Climb",
     type: "website",
     images: [
       {
