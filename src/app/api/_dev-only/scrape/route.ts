@@ -3,6 +3,11 @@ import { NextResponse } from "next/server";
 import { chromium } from "playwright";
 
 export async function GET(req: Request) {
+  // Only run this code in "development"
+  if (process.env.NODE_ENV !== "development") {
+    return new NextResponse("Not in dev", { status: 404 });
+  }
+
   const authHeader = req.headers.get("authorization");
   const token = authHeader?.split(" ")[1];
 

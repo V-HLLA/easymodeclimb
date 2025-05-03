@@ -4,11 +4,25 @@ import { neon } from "@neondatabase/serverless";
 const sql = neon(process.env.DATABASE_URL!);
 
 export async function GET(req: NextRequest) {
+  // Only run this code in "development"
+  if (process.env.NODE_ENV !== "development") {
+    return new NextResponse("Not in dev", { status: 404 });
+  }
+
+  // this needs to commented out if trying to access by the browser
   const authHeader = req.headers.get("authorization");
-  const token = authHeader?.split(" ")[1];
+  const token = authHeader?.startsWith("Bearer ")
+    ? authHeader.split(" ")[1]
+    : null;
 
   if (token !== process.env.SCRAPE_SECRET) {
-    return new NextResponse("Unauthorized", { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // Simple CORS check so browsers can’t call it cross‑origins
+  const origin = req.headers.get("origin");
+  if (origin && origin !== "http://localhost:3000") {
+    return new NextResponse("Origin is not correct", { status: 403 });
   }
 
   try {

@@ -1,17 +1,22 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
-import { EASY_CHAMPS_LIST } from "@/lib/constants";
+import { BASEURL, EASY_CHAMPS_LIST } from "@/lib/constants";
 
 const sql = neon(process.env.DATABASE_URL!);
 
 export async function GET(req: Request) {
+  // Only run this code in "development"
+  if (process.env.NODE_ENV !== "development") {
+    return new NextResponse("Not in dev", { status: 404 });
+  }
+
   const authHeader = req.headers.get("authorization");
   const token = authHeader?.split(" ")[1];
 
   if (token !== process.env.SCRAPE_SECRET) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
-
+  // updates db with the scraped results
   try {
     const rows = await sql`
       INSERT INTO easychampions_stats (id, patch, name, winrate, pickrate, banrate)
@@ -28,12 +33,7 @@ export async function GET(req: Request) {
     `;
 
     const response = NextResponse.json(`INSERT WAS SUCCESSFUL ${rows}`);
-    response.headers.set(
-      "Access-Control-Allow-Origin",
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000"
-        : "https://easymode-climb.vercel.app"
-    );
+    response.headers.set("Access-Control-Allow-Origin", `${BASEURL}`);
 
     return response;
   } catch (error: unknown) {
@@ -42,10 +42,7 @@ export async function GET(req: Request) {
       { message: "Failed to fetch easy champions data", error: errorMessage },
       { status: 500 }
     );
-    errorResponse.headers.set(
-      "Access-Control-Allow-Origin",
-      "http://localhost:3000"
-    );
+    errorResponse.headers.set("Access-Control-Allow-Origin", `${BASEURL}`);
     return errorResponse;
   }
 }

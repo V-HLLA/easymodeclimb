@@ -14,6 +14,7 @@ export default function ChampionTableFiltered() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["champions-stats-data"],
     queryFn: fetchAllChampions,
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   if (isLoading) return <Loading />;
