@@ -1,9 +1,9 @@
+import "server-only";
 import { neon } from "@neondatabase/serverless";
 import { Champion } from "@/lib/types";
 
 const sql = neon(process.env.DATABASE_URL!);
-
-export default async function getEasyChampions() {
+async function easyChampionsData() {
   try {
     const rows = await sql`
   SELECT id, patch, name as championName, winrate as championWinRate, pickrate as championPickrate , banrate as championBanrate, role
@@ -13,6 +13,10 @@ export default async function getEasyChampions() {
     return rows as Champion[];
   } catch (error) {
     console.error("Failed to fetch champion stats:", error);
-    return null;
+    throw new Error("Failed to retrieve easy champion data", { cause: error });
   }
+}
+
+export async function getEasyChampions() {
+  return easyChampionsData();
 }

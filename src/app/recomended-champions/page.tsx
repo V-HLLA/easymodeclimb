@@ -1,5 +1,5 @@
 import ChampionTableFiltered from "./_components/ChampionTableFiltered";
-import getEasyChampions from "../../lib/getEasyChampions";
+import { getEasyChampions } from "../../lib/getEasyChampions";
 
 export const revalidate = 604800; // 7 days in seconds
 

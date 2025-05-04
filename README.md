@@ -13,15 +13,14 @@ You can view the live version of the website by clicking the image below:
 
 ## 🔧 Tech Stack
 
-| Layer    | Tech                        | Why?                                     |
-| -------- | --------------------------- | ---------------------------------------- |
-| Frontend | Next.js 15 + App Router     | Modern, SEO-friendly, flexible           |
-| UI       | Tailwind CSS + shadcn/ui    | Fast styling and solid component library |
-| Backend  | Next.js Route Handlers      | Built-in API handling                    |
-| Database | PostgreSQL Neon             | Relational                               |
-| Scraper  | (Playwright)                | For scraping                             |
-| Charts   | Recharts or TanStack Charts | For win rate history and stats           |
-| Hosting  | Vercel                      | Simple and scalable deployment           |
+| Layer    | Tech                     | Why?                                     |
+| -------- | ------------------------ | ---------------------------------------- |
+| Frontend | Next.js 15 + App Router  | Modern, SEO-friendly, flexible           |
+| UI       | Tailwind CSS + shadcn/ui | Fast styling and solid component library |
+| Backend  | Next.js Route Handlers   | Built-in API handling                    |
+| Database | PostgreSQL Neon          | Relational                               |
+| Scraper  | (Playwright)             | For scraping                             |
+| Hosting  | Vercel                   | Simple and scalable deployment           |
 
 ---
 
