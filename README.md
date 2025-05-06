@@ -1,15 +1,11 @@
 # 🧠 EasymodeClimb
 
-_EasymodeClimb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta._
-
-> “What champ should I play to climb — without needing insane mechanics?”
-
-## Implementation
-
 You can view the live version of the website by clicking the image below:
 [![Site Preview](./public/preview.jpg)](https://easymode-climb.vercel.app/)
 
----
+_EasymodeClimb is a League of Legends companion tool that recommends champions that are easy to play and strong in the current meta._
+
+> “What champ should I play to climb — without needing insane mechanics that is strong in the current meta?”
 
 ## 🔧 Tech Stack
 
@@ -20,7 +16,7 @@ You can view the live version of the website by clicking the image below:
 | Backend  | Next.js Route Handlers   | Built-in API handling                    |
 | Database | PostgreSQL Neon          | Relational                               |
 | Scraper  | (Playwright)             | For scraping                             |
-| Hosting  | Vercel                   | Simple and scalable deployment           |
+| Hosting  | Vercel                   | Deployment                               |
 
 ---
 
@@ -38,7 +34,7 @@ You can view the live version of the website by clicking the image below:
 
 - [x] Define schema:
   - [x] Champion
-  - [x] ChampionStats (by patch)
+  - [x] ChampionStats
 - [x] Seed with initial data from scraper
 - [x] Write queries for API consumption
 
