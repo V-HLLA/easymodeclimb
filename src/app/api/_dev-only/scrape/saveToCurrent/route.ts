@@ -1,22 +1,23 @@
-//takes the scraped data from champion_stats and upserts easychampions_stats with it
+//DO NOT RUN THIS WITHOUT RUNNING SAVEARCHIVE FIRST
+// This updated currentPatch table data with the the scraper data from champion_stats
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { BASEURL, EASY_CHAMPS_LIST } from "@/lib/constants";
 
 const sql = neon(process.env.DATABASE_URL!);
 
-export async function GET(req: Request) {
+export async function GET() {
   // Only run this code in "development"
   if (process.env.NODE_ENV !== "development") {
     return new NextResponse("Not in dev", { status: 404 });
   }
 
-  const authHeader = req.headers.get("authorization");
-  const token = authHeader?.split(" ")[1];
+  // const authHeader = req.headers.get("authorization");
+  // const token = authHeader?.split(" ")[1];
 
-  if (token !== process.env.SCRAPE_SECRET) {
-    return new NextResponse("Unauthorized", { status: 401 });
-  }
+  // if (token !== process.env.SCRAPE_SECRET) {
+  //   return new NextResponse("Unauthorized", { status: 401 });
+  // }
   // updates db with the scraped results
   try {
     const rows = await sql`

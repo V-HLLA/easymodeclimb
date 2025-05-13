@@ -1,0 +1,10 @@
+In order to update the current data table to the newest data the following steps must be taken:
+
+
+This exact order must  be followed !IMPORTANT
+
+1st Run api/dev-only/scrape/saveArchiveCurrentPatch
+
+2nd Run api/dev-only/scrape
+
+3rd Run api/dev-only/scrape/saveToCurrent

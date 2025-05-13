@@ -3,18 +3,18 @@ import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
 import { chromium } from "playwright";
 
-export async function GET(req: Request) {
+export async function GET() {
   // Only run this code in "development"
   if (process.env.NODE_ENV !== "development") {
     return new NextResponse("Not in dev", { status: 404 });
   }
 
-  const authHeader = req.headers.get("authorization");
-  const token = authHeader?.split(" ")[1];
+  // const authHeader = req.headers.get("authorization");
+  // const token = authHeader?.split(" ")[1];
 
-  if (token !== process.env.SCRAPE_SECRET) {
-    return new NextResponse("Unauthorized", { status: 401 });
-  }
+  // if (token !== process.env.SCRAPE_SECRET) {
+  //   return new NextResponse("Unauthorized", { status: 401 });
+  // }
 
   let browser;
   try {
@@ -112,8 +112,9 @@ export async function GET(req: Request) {
       await sql`
     INSERT INTO champion_stats (patch, name, winrate, pickrate, banrate)
     VALUES (${currentPatch}, ${champ.name}, ${champ.winRate}, ${champ.pickRate}, ${champ.banRate})
-    ON CONFLICT (patch, name)
+    ON CONFLICT (name)
     DO UPDATE SET
+      patch = EXCLUDED.patch,
       winrate = EXCLUDED.winrate,
       pickrate = EXCLUDED.pickrate,
       banrate = EXCLUDED.banrate
